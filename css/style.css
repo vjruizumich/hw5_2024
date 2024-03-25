@@ -95,3 +95,37 @@ header {
     flex-wrap: wrap;
     justify-content: center;
 }
+
+@media screen and (min-width: 900px) {
+    header {    
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav_links {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pricing {
+        flex-direction: row;
+    }
+
+    .card {
+        flex: 0 0 275px;
+        flex-direction: column;
+    }
+
+    body > header:first-of-type {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    main {
+        margin-top: 91.1px;
+    }
+
+}
