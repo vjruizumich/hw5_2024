@@ -1,3 +1,4 @@
+/* animates logo */
 @keyframes logoAnimation {
     from {
         width: 25px;
@@ -14,17 +15,20 @@
     animation: logoAnimation 5s forwards;
 }
 
+/* adding body font */
 body {
     font-family: 'Poppins', serif;
     background-image: url('/images/concrete_seamless.png'), linear-gradient(#f1f1f1, #f1f1f1);
 }
 
+/* styles header to match example */
 header {
     display: flex;
     flex-direction: column;    
     align-items: center;
 }
 
+/* styles navigation to match example */
 .nav_links {
     display: flex;
     flex-direction: column;
@@ -35,23 +39,20 @@ header {
     color: #0B04FF;
 }
 
-/* .nav_links .nav_item a:hover, .nav_links .nav_item a:focus{
-    color: #50C7C7;
-    text-decoration: underline;
-    -webkit-text-decoration-style: dotted;
-            text-decoration-style: dotted;
-} */
-
+/* keeps link colors even after visting */
 .nav_links a:visited {
     color: #0B04FF;
 }
 
+/* styles cards to match example */
 .card > header {
     background: #288088;
     border: 2px solid #45ADAD;
     padding: 20px 0;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 .card {
@@ -83,6 +84,7 @@ header {
     align-items: center;
 } */
 
+/* styles gallery to match example */
 .gallery img {
     border: 10px solid #50c7c7;
     margin: 10px;
@@ -96,6 +98,7 @@ header {
     justify-content: center;
 }
 
+/* sets breakpoint for next view */
 @media screen and (min-width: 900px) {
     header {    
         flex-direction: row;
@@ -118,6 +121,7 @@ header {
         flex-direction: column;
     }
 
+    /* fixes header in place for nav */
     body > header:first-of-type {
         position: fixed;
         top: 0;
@@ -130,26 +134,30 @@ header {
 
 }
 
+/* removes animation for prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
     #logo {
         animation: none;
     }
 }
 
+/* sets up style for printing */
 @media print and (orientation: portrait) {
+    /* changes font */
     body {
         font-family: 'Arial', 'Helvetica';
         background-image: linear-gradient(#f1f1f1, #f1f1f1);
     }
 
+    /* updates header, nav, and cards to match print style */
     header {
-        flex-direction: column;    
-        align-items: center;
+        flex-direction: column;
+        align-items: normal;
     }
     
     .nav_links {
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: space-around;   
     }
 
     .pricing {
@@ -162,6 +170,7 @@ header {
         flex-basis: 325px;
     }
 
+    /* removes gallery */
     .gallery {
         display: none;
     }
@@ -170,6 +179,7 @@ header {
         display: none;
     }
 
+    /* adds thumbs up */
     .card ul li:nth-child(2)::after {
         content: "\1F44D";
     }
