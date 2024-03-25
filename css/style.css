@@ -129,3 +129,48 @@ header {
     }
 
 }
+
+@media (prefers-reduced-motion: reduce) {
+    #logo {
+        animation: none;
+    }
+}
+
+@media print and (orientation: portrait) {
+    body {
+        font-family: 'Arial', 'Helvetica';
+        background-image: linear-gradient(#f1f1f1, #f1f1f1);
+    }
+
+    header {
+        flex-direction: column;    
+        align-items: center;
+    }
+    
+    .nav_links {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .pricing {
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
+    .card {
+        border: 2px solid #45addd;
+        flex-basis: 325px;
+    }
+
+    .gallery {
+        display: none;
+    }
+
+    #gallery {
+        display: none;
+    }
+
+    .card ul li:nth-child(2)::after {
+        content: "\1F44D";
+    }
+}
